@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Password Security Expert{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-shield-alt text-xl"></i>
+                    <span class="text-xl font-bold">Password Security Expert</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="{{ url_for('index') }}" class="hover:text-blue-200 transition duration-200">Home</a>
+                    <a href="{{ url_for('generator') }}" class="hover:text-blue-200 transition duration-200">Generator</a>
+                    <a href="{{ url_for('analyzer') }}" class="hover:text-blue-200 transition duration-200">Analyzer</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto py-8 px-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400">
+                <i class="fas fa-lock mr-2"></i>
+                Password Security Expert - Keep your accounts safe with strong passwords
+            </p>
+            <p class="text-gray-500 text-sm mt-2">
+                🔒 No passwords are stored or transmitted. All processing happens in your browser.
+            </p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

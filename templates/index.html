@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center mb-12">
+    <h1 class="text-4xl font-bold text-gray-800 mb-4">
+        <i class="fas fa-shield-alt text-blue-600 mr-3"></i>
+        Password Security Expert
+    </h1>
+    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Generate strong, secure passwords and test your existing passwords for security vulnerabilities.
+    </p>
+</div>
+
+<div class="grid md:grid-cols-2 gap-8 mb-12">
+    <!-- Password Generator Card -->
+    <div class="bg-white rounded-lg shadow-lg p-8 border border-blue-200">
+        <div class="text-center mb-6">
+            <i class="fas fa-key text-blue-600 text-4xl mb-4"></i>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Password Generator</h2>
+            <p class="text-gray-600">Create cryptographically secure random passwords with custom requirements.</p>
+        </div>
+        <ul class="space-y-3 text-gray-700 mb-6">
+            <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Customizable length and character sets
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Cryptographically secure generation
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Instant strength analysis
+            </li>
+        </ul>
+        <a href="{{ url_for('generator') }}" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-200 block text-center font-semibold">
+            Generate Passwords <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+    </div>
+
+    <!-- Password Analyzer Card -->
+    <div class="bg-white rounded-lg shadow-lg p-8 border border-green-200">
+        <div class="text-center mb-6">
+            <i class="fas fa-search text-green-600 text-4xl mb-4"></i>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Password Analyzer</h2>
+            <p class="text-gray-600">Test your passwords for strength and get detailed security feedback.</p>
+        </div>
+        <ul class="space-y-3 text-gray-700 mb-6">
+            <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Comprehensive strength scoring
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Detailed security feedback
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Common password detection
+            </li>
+        </ul>
+        <a href="{{ url_for('analyzer') }}" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-200 block text-center font-semibold">
+            Analyze Passwords <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+    </div>
+</div>
+
+<!-- Security Tips -->
+<div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+        <i class="fas fa-exclamation-triangle text-yellow-600 mr-3"></i>
+        Security Best Practices
+    </h3>
+    <div class="grid md:grid-cols-2 gap-4 text-gray-700">
+        <div class="flex items-start">
+            <i class="fas fa-lock text-green-600 mt-1 mr-3"></i>
+            <span>Use at least 12 characters for important accounts</span>
+        </div>
+        <div class="flex items-start">
+            <i class="fas fa-sync-alt text-blue-600 mt-1 mr-3"></i>
+            <span>Use unique passwords for each account</span>
+        </div>
+        <div class="flex items-start">
+            <i class="fas fa-user-shield text-purple-600 mt-1 mr-3"></i>
+            <span>Enable two-factor authentication when available</span>
+        </div>
+        <div class="flex items-start">
+            <i class="fas fa-vault text-red-600 mt-1 mr-3"></i>
+            <span>Consider using a password manager</span>
+        </div>
+    </div>
+</div>
+{% endblock %}

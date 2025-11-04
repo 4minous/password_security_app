@@ -1,0 +1,121 @@
+/* Custom styles for password strength indicators */
+.strength-meter {
+    height: 8px;
+    border-radius: 4px;
+    margin: 10px 0;
+    background: #e5e7eb;
+    overflow: hidden;
+}
+
+.strength-fill {
+    height: 100%;
+    transition: all 0.3s ease;
+    width: 0%;
+}
+
+.strength-weak .strength-fill {
+    background: #dc2626;
+    width: 25%;
+}
+
+.strength-moderate .strength-fill {
+    background: #d97706;
+    width: 50%;
+}
+
+.strength-strong .strength-fill {
+    background: #059669;
+    width: 75%;
+}
+
+.strength-very-strong .strength-fill {
+    background: #10b981;
+    width: 100%;
+}
+
+/* Password visibility toggle */
+.password-input {
+    transition: all 0.3s ease;
+}
+
+/* Feedback items */
+.feedback-item {
+    padding: 8px 12px;
+    margin: 4px 0;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.feedback-good {
+    background: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid #10b981;
+}
+
+.feedback-warning {
+    background: #fef3c7;
+    color: #92400e;
+    border-left: 4px solid #d97706;
+}
+
+.feedback-error {
+    background: #fee2e2;
+    color: #991b1b;
+    border-left: 4px solid #dc2626;
+}
+
+/* Custom range slider */
+input[type="range"] {
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+    background: #e5e7eb;
+    height: 8px;
+    border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #3b82f6;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-track {
+    background: #e5e7eb;
+    height: 8px;
+    border-radius: 4px;
+    border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+    background: #3b82f6;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}
